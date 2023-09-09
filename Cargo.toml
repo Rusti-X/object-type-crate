@@ -1,0 +1,13 @@
+[package]
+name = "object-type"
+version = "0.1.0"
+edition = "2021"
+description = "struct Object - wrapper for anything type."
+documentation = "https://crates.io/crates/object-type"
+license = "BSD-3-Clause"
+keywords = ["object", "struct", "type"]
+authors = ["Rusti-X", "MRX1T", "/X?"]
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
