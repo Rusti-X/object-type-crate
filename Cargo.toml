@@ -7,7 +7,7 @@ documentation = "https://github.com/Rusti-X/object-type-crate/blob/main/README.m
 repository = "https://github.com/Rusti-X/object-type-crate.git"
 license = "BSD-3-Clause"
 keywords = ["object", "struct", "type"]
-authors = ["Rusti-X", "MRX1T", "/X?"]
+authors = ["Rustix"]
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
