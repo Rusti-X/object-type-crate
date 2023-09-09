@@ -19,6 +19,8 @@ mod tests {
         vec.push(obj!(obj!("&Str In Object In Object")));
         assert_eq!(vec[0].get::<u8>(), 255_u8);
         assert_eq!(vec[1].get::<Object>().get::<&str>(), "&Str In Object In Object");
+
+        assert!(obj!(true).equals::<bool>(true))
     }
 }
 

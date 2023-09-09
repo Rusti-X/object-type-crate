@@ -1,6 +1,6 @@
 [package]
 name = "object-type"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2021"
 description = "struct Object - wrapper for anything type."
 documentation = "https://github.com/Rusti-X/object-type-crate/blob/main/README.md"

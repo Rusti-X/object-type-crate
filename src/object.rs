@@ -22,9 +22,9 @@ impl Object {
     /// *If (T != type of value in struct) => ???*
     /// Example:
     /// ```
-    /// let int_object = xstd::obj!(6982_i32);
+    /// let int_object = object_type::obj!(6982_i32);
     /// let _ = int_object.get::<i32>(); // Ok
-    /// let _ = int_object.get::<i64>(); // ???
+    /// // let _ = int_object.get::<i64>(); => ???
     /// ```
     pub fn get<T: Clone>(&self) -> T {
         unsafe { self.__get_unsafe() }
@@ -40,9 +40,9 @@ impl Object {
     /// *If (T != type of value in struct) => ???*
     /// Example:
     /// ```
-    /// let int_object = obj!(6982_i32);
+    /// let int_object = object_type::obj!(6982_i32);
     /// let _ = int_object.get_ptr::<i32>(); // Ok
-    /// let _ = int_object.get_ptr::<i64>(); // ???
+    /// // let _ = int_object.get_ptr::<i64>(); => ???
     /// ```
     pub fn get_ptr<T>(&self) -> *mut T {
         unsafe { self.__get_ptr_unsafe() }
@@ -63,7 +63,7 @@ impl Object {
     ///
     /// Example:
     /// ```
-    /// let int_object = xstd::obj!(2372_i16);
+    /// let int_object = object_type::obj!(2372_i16);
     /// println!("=> {}", int_object.__value_to_string::<i16>());
     /// ```
     pub fn __value_to_string<T: ToString>(&self) -> String {
@@ -72,6 +72,13 @@ impl Object {
 
     unsafe fn __value_to_string_unsafe<T: ToString>(&self) -> String {
         (*self.get_ptr::<T>()).to_string()
+    }
+
+
+    pub fn equals<T>(&self, other: T) -> bool
+        where T: PartialEq + Clone,
+    {
+        other.eq(&self.get::<T>())
     }
 }
 
@@ -93,14 +100,9 @@ impl Display for Object {
 
 /// Returns an instance of Object
 /// -----------------------------
-/// Using:
-/// ```
-/// // Where *** = any expression (value)
-/// xstd::obj!(***);
-/// ```
 /// Example:
 /// ```
-/// let object = xstd::obj!("str test");
+/// let object = object_type::obj!("str test");
 /// ```
 #[macro_export]
 macro_rules! obj {
