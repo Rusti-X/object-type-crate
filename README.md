@@ -1,8 +1,8 @@
 # Object type
 
-Object it's type, using a pointer to store any other types  
-But, it's not Object<*T*> it's just Object!  
-You don't need to specify a type template to create or type an Object.  
+Object it's type, using a pointer to store any other types    
+But, it's not Object<*T*> it's just Object!    
+You don't need to specify a type template to create or type an Object.    
 
 And Object is structure, not trait!
 
