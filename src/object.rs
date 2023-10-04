@@ -59,14 +59,12 @@ impl Object {
     }
 
 
-    /// Unstable? 
-    ///
     /// Example:
     /// ```
     /// let int_object = object_type::obj!(2372_i16);
-    /// println!("=> {}", int_object.__value_to_string::<i16>());
+    /// println!("=> {}", int_object.value_to_string::<i16>());
     /// ```
-    pub fn __value_to_string<T: ToString>(&self) -> String {
+    pub fn value_to_string<T: ToString>(&self) -> String {
         unsafe { self.__value_to_string_unsafe::<T>() }
     }
 
